@@ -1,0 +1,36 @@
+@layout('layouts/main')
+
+@section('content')
+
+<div class="container" style="margin-top: 80px">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          TAMBAH POSTS
+        </div>
+        <div class="card-body">
+          <form action="{{ route('posts.store') }}" method="POST" enctype="multipart/form-data">
+            {{ csrfField() }}
+            <div class="form-group">
+              <label>TITLE</label>
+              <input class="form-control" type="text" name="title" placeholder="Masukkan Judul Post">
+            </div>
+            <div class="form-group">
+              <label>File</label>
+              <input class="form-control" type="file" name="image" placeholder="Masukkan gambar">
+            </div>
+            <div class="form-group">
+              <label>CONTENT</label>
+              <textarea class="form-control" name="content"rows="5" placeholder="Masukkan Content Post"></textarea>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-md btn-success">SIMPAN</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+@endsection
